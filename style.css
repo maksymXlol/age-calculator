@@ -1,0 +1,21 @@
+:root {
+  --off-white: hsl(0, 0%, 94%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(0, 0%, 86%);
+  --purple: hsl(259, 100%, 65%);
+  --red: hsl(0, 100%, 67%);
+  --off-black: hsl(0, 0%, 8%);
+  --smokey-grey: hsl(0, 1%, 44%);
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+body {
+  background-color: var(--light-grey);
+}
+.app {
+  font-family: "poppins";
+}
