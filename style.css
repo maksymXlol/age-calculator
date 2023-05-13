@@ -19,3 +19,22 @@ body {
 .app {
   font-family: "poppins";
 }
+
+.result__num {
+  color: var(--purple);
+}
+
+.result__line {
+  display: flex;
+  color: var(--off-black);
+  font-weight: 900;
+  font-size: 6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
