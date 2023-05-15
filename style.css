@@ -9,15 +9,58 @@
 }
 
 @font-face {
-  font-family: "poppins";
+  font-family: "Poppins";
   src: url(./assets/fonts/Poppins-Regular.ttf);
 }
 
 body {
+  display: grid;
+  place-items: center;
   background-color: var(--light-grey);
+  font-family: "Poppins";
+  min-height: 100vh;
+  margin: 0;
 }
+
 .app {
-  font-family: "poppins";
+  background-color: var(--off-white);
+  border-radius: 1rem;
+  border-bottom-right-radius: 10rem;
+  width: 100%;
+  max-width: 800px;
+  padding: 3rem;
+}
+
+.header__form {
+  display: flex;
+  gap: 1rem;
+}
+
+.form__label {
+  display: block;
+  color: var(--smokey-grey);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.form__input {
+  display: block;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--smokey-grey);
+  background-color: transparent;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.form__input:hover {
+  cursor: pointer;
+}
+
+.line {
+  border: none;
+  border-bottom: 1px solid var(--smokey-grey);
 }
 
 .result__num {
@@ -25,16 +68,7 @@ body {
 }
 
 .result__line {
-  display: flex;
   color: var(--off-black);
   font-weight: 900;
   font-size: 6rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.result {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
