@@ -56,11 +56,32 @@ body {
 
 .form__input:hover {
   cursor: pointer;
+  border: 1px solid var(--purple);
+}
+
+.divider {
+  position: relative;
 }
 
 .line {
   border: none;
   border-bottom: 1px solid var(--smokey-grey);
+  padding-block: 2.5rem;
+}
+
+.btn {
+  border-radius: 70px;
+  height: 90px;
+  width: 90px;
+  background-color: var(--purple);
+  border: none;
+  position: absolute;
+  top: 36px;
+  left: 710px;
+}
+
+.btn:hover {
+  background-color: var(--off-black);
 }
 
 .result__num {
