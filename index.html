@@ -26,6 +26,7 @@
         color: hsl(228, 45%, 44%);
       }
     </style>
+    <script src="./script.js" defer></script>
   </head>
 
   <body>
@@ -33,14 +34,16 @@
       <div class="header">
         <form action="" class="header__form">
           <div class="form__field">
-            <label for="days" class="form__label">Day</label>
+            <label for="day" class="form__label">Day</label>
             <input
               type="number"
               max="31"
               min="1"
-              id="days"
+              placeholder="DD"
+              id="day"
               class="form__input"
             />
+            <p class="error-msg day-error"></p>
           </div>
           <div class="form__field">
             <label for="mounth" class="form__label">Mounth</label>
@@ -48,19 +51,23 @@
               type="number"
               max="12"
               min="1"
+              placeholder="MM"
               id="mounth"
               class="form__input"
             />
+            <p class="error-msg mounth-error"></p>
           </div>
           <div class="form__field">
-            <label for="years" class="form__label">Year</label>
+            <label for="year" class="form__label">Year</label>
             <input
               type="number"
               max="2023"
               min="1830"
-              id="Years"
+              placeholder="YYYY"
+              id="year"
               class="form__input"
             />
+            <p class="error-msg year-error"></p>
           </div>
         </form>
       </div>

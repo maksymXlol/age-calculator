@@ -44,6 +44,14 @@ body {
   margin-bottom: 5px;
 }
 
+.error-msg {
+  display: none;
+  margin: 0;
+  padding-top: 0.5rem;
+  color: var(--red);
+  font-style: italic;
+}
+
 .form__input {
   display: block;
   padding: 1rem;
@@ -57,6 +65,18 @@ body {
 .form__input:hover {
   cursor: pointer;
   border: 1px solid var(--purple);
+}
+
+.error-field .error-msg {
+  display: block;
+}
+
+.error-field .form__label {
+  color: var(--red);
+}
+
+.error-field .form__input {
+  border-color: var(--red);
 }
 
 .divider {
