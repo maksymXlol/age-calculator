@@ -2,19 +2,35 @@
 
 let btn = document.querySelector(".btn");
 let dayInput = document.querySelector("#day");
-let mounthField = document.querySelector("#mounth");
-let yearField = document.querySelector("#year");
+let monthInput = document.querySelector("#month");
+let yearInput = document.querySelector("#year");
 btn.addEventListener("click", click);
 
 function click() {
   let day = parseInt(dayInput.value);
-  let mounth = parseInt(mounthField.value);
-  let year = parseInt(yearField.value);
-  console.log(day, mounth, year);
+  let month = parseInt(monthInput.value);
+  let year = parseInt(yearInput.value);
+  console.log(day, month, year);
+
+  let yearField = yearInput.closest(".form__field");
+
+  let monthField = monthInput.closest(".form__field");
 
   let dayField = dayInput.closest(".form__field");
+
   if (!day) {
     dayField.classList.add("error-field");
   } else {
+    dayField.classList.remove("error-field");
+  }
+  if (!month) {
+    monthField.classList.add("error-field");
+  } else {
+    monthField.classList.remove("error-field");
+  }
+  if (!year) {
+    yearField.classList.add("error-field");
+  } else {
+    yearField.classList.remove("error-field");
   }
 }
