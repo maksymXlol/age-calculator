@@ -1,21 +1,46 @@
-"use strict";
+import moment from "https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm";
+import momentPreciseRangePlugin from "https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/+esm";
 
 let btn = document.querySelector(".btn");
 let dayInput = document.querySelector("#day");
 let monthInput = document.querySelector("#month");
 let yearInput = document.querySelector("#year");
+
+let dayResult = document.querySelector("#day-result");
+let monthResult = document.querySelector("#month-result");
+let yearResult = document.querySelector("#year-result");
 btn.addEventListener("click", click);
 
 function click() {
-  let now = new Date();
-  let birthDay = new Date(2011, 9, 28);
-  console.log(now - birthDay);
-  // let dayCheck = fieldCheck(dayInput, checkDay);
-  // let monthCheck = fieldCheck(monthInput, checkMonth);
-  // let yearCheck = fieldCheck(yearInput, checkYear);
-  // if (dayCheck && monthCheck && yearCheck) {
+  let dayCheck = fieldCheck(dayInput, checkDay);
+  let monthCheck = fieldCheck(monthInput, checkMonth);
+  let yearCheck = fieldCheck(yearInput, checkYear);
+  if (!(dayCheck && monthCheck && yearCheck)) {
+    return;
+  }
 
-  // }
+  let date = moment({
+    year: yearInput.value,
+    month: monthInput.value - 1,
+    day: dayInput.value,
+  });
+
+  if (!date.isValid()) {
+    makeSetValidity(dayInput, false, "Must be a valid date");
+    makeSetValidity(monthInput, false, "");
+    makeSetValidity(yearInput, false, "");
+    return;
+  }
+
+  let diff = moment.preciseDiff(date, moment.now(), true);
+  console.log(diff);
+  setResult(diff.days, diff.months, diff.years);
+}
+
+function setResult(day, month, year) {
+  dayResult.innerHTML = day;
+  yearResult.innerHTML = year;
+  monthResult.innerHTML = month;
 }
 
 function checkDay(dayInput) {
