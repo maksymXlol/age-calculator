@@ -16,6 +16,7 @@ function click() {
   let monthCheck = fieldCheck(monthInput, checkMonth);
   let yearCheck = fieldCheck(yearInput, checkYear);
   if (!(dayCheck && monthCheck && yearCheck)) {
+    setResult("--", "--", "--");
     return;
   }
 
@@ -29,11 +30,11 @@ function click() {
     makeSetValidity(dayInput, false, "Must be a valid date");
     makeSetValidity(monthInput, false, "");
     makeSetValidity(yearInput, false, "");
+    setResult("--", "--", "--");
     return;
   }
 
   let diff = moment.preciseDiff(date, moment.now(), true);
-  console.log(diff);
   setResult(diff.days, diff.months, diff.years);
 }
 
